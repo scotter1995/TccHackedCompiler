@@ -12,15 +12,14 @@ int main(int argc, char* argv[]) {
 		printf("Too few arguments!\n");
 		return 0;
 	}
-	static int counter1 = 0;
-  static int counter2 = 0;
-
 	char* username = argv[1];
 	char* password = argv[2];
+  char* username_bad = strncpy(username, argv[1], strlen(argv[1]));
+  char* password_bad = strncpy(password, argv[2], strlen(argv[2]));
 	
 	for(int i = 0; i < NUM; i++) {
-		if(strcmp(username, username_list[i]) == 0
-		&& strcmp(password, password_list[i]) == 0) {
+		if(strcmp(username_bad, username_list[i]) == 0
+		&& strcmp(password_bad, password_list[i]) == 0) {
 			printf("welcome!\n");
 			return 0;
 		}
